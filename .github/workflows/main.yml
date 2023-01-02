@@ -8,24 +8,12 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
       - uses: actions/checkout@v3
-
-#       - name: Remove json result files
-#         uses: JesseTG/rm@v1.0.2
-#         with:
-#           path: ./cypress/results/json
 
       - name: Install and run Cypress tests
         uses: cypress-io/github-action@v4
-#         with:
-#           headed: true
         continue-on-error: true
-        
-#       - name: Merge test results into one
-#         run: npm run report:merge
-        
-#       - name: Generate HTML report
-#         run: npm run report:gen
         
       - name: Deploy report to GitHub pages
         uses: peaceiris/actions-gh-pages@v3
