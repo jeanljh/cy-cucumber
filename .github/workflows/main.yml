@@ -12,8 +12,6 @@ jobs:
 
       - name: Install and run Cypress tests
         uses: cypress-io/github-action@v5
-#         with:
-#           headed: true
         continue-on-error: true
         
       - name: Deploy report to GitHub pages
